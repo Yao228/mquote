@@ -9,7 +9,7 @@ import Home from './components/Home';
 export default function App() {
   const [fontsLoaded] = useFonts({
     'AdriannaDemibold': require('./assets/fonts/AdriannaDemibold.ttf'),
-    'TestDomaineText-Regular': require('./assets/fonts/TestDomaineText-Regular.otf'),
+    'TestDomaineText-Medium': require('./assets/fonts/TestDomaineText-Medium.otf'),
   });
 
   if (!fontsLoaded) {

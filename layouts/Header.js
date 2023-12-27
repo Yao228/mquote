@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Pressable } from "react-native";
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -51,5 +51,5 @@ const styles = StyleSheet.create({
         fontSize:24,
         fontFamily: 'AdriannaDemibold',
         fontWeight: 'normal',
-    }
+    },
 });
