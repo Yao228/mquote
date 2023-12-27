@@ -1,11 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { useFonts } from 'expo-font';
+
+import Header from './layouts/Header';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    'Lora': require('./assets/fonts/Lora-Regular.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Header/>
+      <Text>My Motivation Quote App</Text>
+      <StatusBar style="light" />
     </View>
   );
 }
