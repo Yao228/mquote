@@ -3,10 +3,13 @@ import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
 
 import Header from './layouts/Header';
+import Footer from './layouts/Footer';
+import Home from './components/Home';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    'Lora': require('./assets/fonts/Lora-Regular.ttf'),
+    'AdriannaDemibold': require('./assets/fonts/AdriannaDemibold.ttf'),
+    'TestDomaineText-Regular': require('./assets/fonts/TestDomaineText-Regular.otf'),
   });
 
   if (!fontsLoaded) {
@@ -16,7 +19,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Header/>
-      <Text>My Motivation Quote App</Text>
+      <Home/>
+      <Footer/>
       <StatusBar style="light" />
     </View>
   );

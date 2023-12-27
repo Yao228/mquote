@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#f8f8f8',
         margin:'auto',
         paddingHorizontal: 5,
-        paddingVertical: 30,
+        paddingVertical: 40,
     },
     headerSearch: {
         width: '25%',
@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     },
     logo:{
         fontSize:24,
-        fontFamily: 'Lora',
+        fontFamily: 'AdriannaDemibold',
+        fontWeight: 'normal',
     }
 });
