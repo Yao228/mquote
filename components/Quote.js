@@ -60,8 +60,8 @@ const styles = StyleSheet.create({
     quoteTypeText: {
         fontSize:18,
         textTransform: 'uppercase',
-        fontWeight: 'bold',
-        color: '#855088'
+        color: '#855088',
+        fontFamily: 'Adrianna-Regular'
     },
     quoteButtons: {
         paddingVertical:5,

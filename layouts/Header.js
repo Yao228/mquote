@@ -1,20 +1,40 @@
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { SimpleLineIcons } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
+import { useState } from 'react';
+import { StyleSheet, View, Text, TextInput} from "react-native";
+
+import SearchButton from "../components/SearchButton";
+import MenuButton from "../components/MenuButton";
+import Logo from "../components/Logo";
+import Search from '../components/Search';
 
 
 export default function Header(){
+
+    const [isModalVisible, setIsModalVisible] = useState(false);
+  
+    const openSearchForm = () => {
+        setIsModalVisible(true);
+    }
+  
+    const onModalClose = () => {
+        setIsModalVisible(false);
+    };
+
+    const openSideMenu = () => {
+        /**aaaaa */
+    }
+
     return(
         <View style={styles.headerContainer}>
-            <View style={styles.headerSearch}>
-                <Ionicons name="search-outline" size={34} color="black" />
-            </View>
-            <View style={styles.headerLogo}>
-                <Text style={styles.logo}>MQuote</Text>
-            </View>
-            <View style={styles.headerMenu}>
-                <SimpleLineIcons name="menu" size={34} color="black" />
-            </View>
+            <SearchButton showFormSearch={openSearchForm}/>
+            <Logo/>
+            <MenuButton showSideMenu={openSideMenu}/>
+
+            <Search isVisible={isModalVisible} onClose={onModalClose}>
+                <TextInput 
+                    style={styles.searchInput}
+                    placeholder='Search by author or type'
+                />
+            </Search>
         </View>
     );
 }
@@ -32,24 +52,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: 5,
         paddingVertical: 40,
     },
-    headerSearch: {
-        width: '25%',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    headerLogo: {
-        width: '50%',
-        justifyContent:'center',
-        alignItems: 'center',
-    },
-    headerMenu: {
-        width: '25%',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    logo:{
-        fontSize:24,
-        fontFamily: 'AdriannaDemibold',
-        fontWeight: 'normal',
-    },
+    searchInput:{
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+        borderRadius: 3,
+        borderColor: '#ccc'
+    }
 });
